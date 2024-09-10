@@ -1,0 +1,21 @@
+{% extends "navbar.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+    <form action="/sign-up" method="post">
+        <div class="signupForm">
+            <h1>Sign-Up</h1>
+            <input class="name" type="text" placeholder="First Name: " id="firstName" name="firstname">
+            <input class="name" type="text" placeholder="Last Name: " id="lastName" name="lastname">
+            <input class="inpItem" type="text" placeholder="Username: " id="user" name="user">
+            <input class="inpItem" type="text" placeholder="Email: " id="email" name="email">
+            <input class="inpItem" type="password" placeholder="Password: " id="pass" name="pass">
+            <button type="submit" class="login-btn">Sign-Up</button>
+            <hr>
+            <a href="/login">Already have an account? Login</a>
+        </div>
+    </form>
+{% endblock %}

@@ -88,7 +88,7 @@ img {
 }
 
 .main {
-  position: relative;
+  position: absolute;
   height: 100vh;
 }
 
@@ -359,4 +359,120 @@ img {
     width: 50%;
     height: 30%;
     border-radius: 10px;
+}
+
+.loginForm{
+  position: relative;
+  padding: 2%;
+  text-align: center;
+  margin-left: 30dvw;
+  margin-top: 30dvh;
+  width: 40dvw;
+  height: 42.5dvh;
+  background-color: var(--body-color);
+  border-radius: 15px;
+  -moz-box-shadow: 0 0 10px #ccc;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.loginForm input{
+  font-size: 1.2rem;
+  width: 35dvw;
+  height: 6dvh;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 2.5dvh;
+}
+
+.login-btn{
+  margin-top: 2dvh;
+  background-color: #2196F3;
+  width: 15dvw;
+  height: 6dvh;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fafafa;
+}
+
+.loginForm h1{
+  color: #000;
+}
+
+.loginForm i{
+  font-size: 1.6rem;
+}
+
+.loginForm a{
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2dvh;
+}
+
+.loginForm hr{
+  margin-top: 3dvh;
+}
+
+#pass-Icon{
+  position: absolute;
+  margin-left: -33dvw;
+  margin-top: 12.5dvh;
+}
+
+#user-Icon{
+  position: absolute;
+  margin-left: 2dvw;
+  margin-top: 4dvh;
+}
+
+.signupForm{
+  position: relative;
+  padding: 2%;
+  text-align: center;
+  margin-left: 30dvw;
+  margin-top: 22.5dvh;
+  width: 40dvw;
+  height: 67.5dvh;
+  background-color: var(--body-color);
+  border-radius: 15px;
+  -moz-box-shadow: 0 0 10px #ccc;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.inpItem{
+  font-size: 1.2rem;
+  width: 35dvw;
+  height: 6dvh;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 2.5dvh;
+}
+
+.signupForm hr{
+  margin-top: 3dvh;
+}
+
+.signupForm h1{
+  color: #000;
+}
+
+.signupForm a{
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2dvh;
+}
+
+.name{
+  font-size: 1.2rem;
+  width: 17dvw;
+  height: 6dvh;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 2.5dvh;
+}
+
+#lastName{
+  margin-left: 1dvw;
 }

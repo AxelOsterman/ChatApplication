@@ -1,0 +1,18 @@
+{% extends "navbar.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="loginForm">
+            <h1>Login</h1>
+            <i class="ri-user-3-line" id="user-Icon"></i><input type="text" placeholder="Username or Email: " id="user" name="user">
+            <i class="ri-lock-line" id="pass-Icon"></i><input type="password" placeholder="Password: " id="pass" name="pass">
+            <button type="submit" class="login-btn">LOGIN</button>
+            <hr>
+            <a href="/sign-up">Don't have an account? Sign-up</a>
+        </div>
+    </form>
+{% endblock %}

@@ -85,8 +85,68 @@ def about():
 def contact():
     return render_template("/")
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form.get("user")
+        password = request.form.get("pass")
+
+        if not username:
+            return render_template("login.html")
+        if not password:
+            return render_template("login.html")
+        
+        rows = SQL("SELECT * FROM users WHERE username == ? OR email == ?", username, username)
+        
+        if not rows:
+            return render_template("login.html", userer="User doesn't exist")
+
+        if not check_password_hash(rows[0][3], password): # hash / password is at index 2
+            return render_template("login.html")
+
+        session["user_id"] = rows[0][0] # id is at index 0 
+        return redirect("/")
+    else:
+        return render_template("login.html")
+
+@app.route("/sign-up", methods=["GET", "POST"])
+def sign_up():
+    session.clear()
+    if request.method == "POST":
+        password = request.form.get("pass")
+        username = request.form.get("user")
+        firstname = request.form.get("firstname")
+        lastname = request.form.get("lastname")
+        email = request.form.get("email")
+
+        if not username:
+            return render_template("sign-up.html", passer="Must enter a username")
+        if not password:
+            return render_template("sign-up.html", passer="Must enter a password")
+            
+        rows = SQL("SELECT * FROM users WHERE username == ?", username)
+
+        if len(rows) != 0:
+            return render_template("sign-up.html", userer="Username already exists")
+            
+        SQL("INSERT INTO users (username, passwordHash, email, firstName, lastName) VALUES (?,?,?,?,?)", username, generate_password_hash(password), email, firstname, lastname)
+
+        rows = SQL("SELECT * FROM users WHERE username == ?", username)
+
+        session["user_id"] = rows[0][0]
+
+        return redirect("/")
+    else:
+        return render_template("sign-up.html")
+
+@app.route("/logout")
+@login_required
+def logout():
+    session.clear()
+    return redirect("/")
+
 @app.route("/app", methods=["GET", "POST"])
 @login_required
-def app():
+def chat():
     if request.method == "GET":
         return render_template("app.html")

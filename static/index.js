@@ -42,3 +42,25 @@ searchBtn.addEventListener('click', () =>{
 searchClose.addEventListener('click', () =>{
    search.classList.remove('show-search')
 })
+
+/*=============== LOG IN & Sign Up FORM ===============*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById("user").addEventListener('focus', function() {
+      org = String(document.getElementById("user").placeholder)
+      document.getElementById("user").placeholder = "";
+    }));
+    if (document.getElementById("user").addEventListener('focusout', function(){
+      document.getElementById("user").placeholder = org;
+    }));
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+   if (document.getElementById("pass").addEventListener('focus', function() {
+      org = String(document.getElementById("pass").placeholder)
+      document.getElementById("pass").placeholder = "";
+   }));
+   if (document.getElementById("pass").addEventListener('focusout', function(){
+      document.getElementById("pass").placeholder = org;
+   }));
+});
